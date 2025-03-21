@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-mobile: 380px;
+}
+
+@theme {
+    --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
+
+    @keyframes fade-in-scale {
+        0% {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+@theme{
+    --animate-moveCircle: moveCircle 2s infinite ease-in-out ;
+
+    @keyframes moveCircle{
+        to{
+            translate:0px;
+        }
+        from{
+            translate:40px;
+        }
+        
+    }
+}
+@theme{
+    --animate-moveCircle2: moveCircle2 2s infinite ease-in-out ;
+
+    @keyframes moveCircle2{
+        to{
+            translate:0px;
+        }
+        from{
+            translate:-40px;
+        }
+        
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/0c2a2e4c5c.js" crossorigin="anonymous"></script>
+    <style>
+        .slider{
+            appearance: none;
+            background: violet;
+            height: 8px;
+            transform: translateY(-8px);
+            border-radius: 10px;
+            background: linear-gradient(315deg, rgba(222, 31, 222, 1) 9%, rgba(101, 27, 101, 1) 84%);   
+        }
+        .slider::-webkit-slider-thumb{
+            position: relative;
+            appearance: none;
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+            background-color: rgb(222, 222, 38);
+            cursor: pointer;
+        }
+        .slider:focus{
+            outline: 2px solid rgb(155, 136, 27);
+            z-index: 3;
+            transition: all ease-in-out;
+        }
+        .slider::-webkit-slider-thumb:hover{
+            background-color: black;
+            border:2px solid gold;
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="w-[100vw] h-[100vh] bg-[#33253f] flex flex-col justify-center items-center space-y-4  ">
+      
+      <div class="bg-[#33253f] flex flex-col justify-center items-center space-y-4 max-w-[400px] min-w-[300px]
+        max-mobile:max-w-[300px] max-mobile:-translate-y-10">
+        
+        <div class="flex">
+            <h1 class="text-[#dcd1d1] text-2xl font-[700] font-serif max-mobile:text-center ">PASSWORD GENERATOR</h1>
+        </div>
+        <!-- password generate box -->
+
+        <div class="flex flex-row  w-full  justify-between items-center bg-[#84848b]    rounded-md  border-b-4 border-b-[#af8f1d] ">
+            <input class="text-lg text-[#ffd001] font-[600] border-0 p-2 pb-[6px] focus:outline-0 placeholder:text-xl placeholder-[#d7c038] placeholder:uppercase placeholder:font-[500]  
+            " readonly  placeholder="password" passDisplay >
+            <div  > 
+                <span copyMsg class=" max-mobile:absolute max-mobile:right-[30px] eventt"></span>
+               <button copyBtn><i class="fa-solid fa-clone text-[#504B38] max-mobile:-translate-x-2 mobile:pr-[8px]"></i></button> </div>
+        </div>
+            <!-- main box -->
+
+        <div class="w-full bg-[#1c1818]  rounded-xl mt-2 px-3 py-4 space-y-[2px]">
+            <div class="flex justify-between   capitalize text-[16px]">
+                <p passwordLength class="text-white pb-2 font-serif text-[18px]" >Password length</p>
+                <p passwordLengthDigits class="text-[gold]  text-[18px]" >0</p>
+            </div>
+            <div class="w-[100%]  ">
+                <input style="margin-top:  0px;" class="w-[100%] p-1 mx-auto slider   "  type="range" min="1" max="20" step="1" passwordSlider>
+            </div>
+
+            <div class="py-[2px]">
+                <input type="checkbox" id="uppercase" class= " w-4 h-4 rounded-full border-2 border-[white] appearance-none checked:bg-blue-500 checked:border-blue-500 cursor-pointer" >
+                <label for="uppercase" class=" font-serif text-gray-300 "  >Include Uppercase Letters</label>
+            </div>
+            <div class="pb-[2px]">
+                <input type="checkbox" id="lowercase"  class= " w-4 h-4 rounded-full border-2 border-[white] appearance-none checked:bg-blue-500 checked:border-blue-500 cursor-pointer" >
+                <label for="lowercase" class=" font-serif text-gray-300 "  >Include Lowercase Letters</label>
+            </div>
+            <div class="pb-[2px]">
+                <input type="checkbox" id="numbers"  class= " w-4 h-4 rounded-full border-2 border-[white] appearance-none checked:bg-blue-500 checked:border-blue-500 cursor-pointer">
+                <label for="numbers" class=" font-serif text-gray-300 "   >Include Numbers  </label>
+            </div>
+            <div class="pb-[2px]">
+                <input type="checkbox" id="symbol"  class= " w-4 h-4 rounded-full border-2 border-[white] appearance-none checked:bg-blue-500 checked:border-blue-500 cursor-pointer">
+                <label for="symbol" class=" font-serif text-gray-300 "   >Include Symbols  </label>
+            </div>
+
+
+            <div class="flex justify-between pt-2 text-[19px] px-[4px] items-center  py-1">
+                <p passStrength class=" text-[gold] font-[400] uppercase  font-serif " >Strength</p>
+                <div colorDetector class="w-6 h-6 bg-white rounded-full brightness-200"  ></div>
+            </div>
+            <div class="mt-2 flex duke cursor-pointer justify-center py-2 bg-[#790c79] brightness-170 rounded-md border-b-4 border-b-[#af8f1d] font-bold text-lg 
+                hover:bg-[#7d457d] hover:brightness-110 transition-all duration-200 group
+                ">
+                <button generatePassword class="text-[#8e7f2a] okclickme uppercase cursor-pointer  group-hover:brightness-200 transition-all duration-200 " >Generate Password</button>
+               
+            </div>
+            
+        </div>
+
+      </div>
+    </section>
+
+    
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
